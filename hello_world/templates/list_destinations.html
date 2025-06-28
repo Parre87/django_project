@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Available Destinations</h2>
+<ul>
+    {% for dest in destinations %}
+    <li>
+        <img src="{{ dest.image.url }}" alt="{{ dest.name }}" style="max-width: 100%; height: auto;">
+        <h3>{{ dest.name }}</h3>
+        <p>{{ dest.description }}</p>
+        <strong>${{ dest.price }}</strong>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

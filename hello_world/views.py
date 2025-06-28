@@ -5,11 +5,14 @@ from django.shortcuts import render, redirect
 from .models import Destination, Booking
 from .forms import BookingForm
 from django.contrib.auth.decorators import login_required
+
+ 
+
 # Create your views here.
 # def index(request):
     # return HttpResponse("Hello, world!") /# only for me for testing purposes/
 
-    def home(request):
+def home(request):
     return render(request, 'home.html')
 
 def list_destinations(request):
