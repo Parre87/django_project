@@ -1,14 +1,36 @@
 {% extends 'base.html' %}
+{% block title %}Destinations - Travel Booking{% endblock %}
 {% block content %}
 <h2>Available Destinations</h2>
-<ul>
+<form method="get" class="filter-form">
+  <input type="text" name="q" placeholder="Search..." value="{{ request.GET.q }}">
+  <select name="sort">
+    <option value="name">Name</option>
+    <option value="price_asc">Price Low to High</option>
+    <option value="price_desc">Price High to Low</option>
+  </select>
+  <button type="submit">Filter</button>
+</form>
+<div class="grid">
     {% for dest in destinations %}
-    <li>
-        <img src="{{ dest.image.url }}" alt="{{ dest.name }}" style="max-width: 100%; height: auto;">
+    <div class="card">
+      <img src="{{ dest.image.url }}" alt="{{ dest.name }}">
+      <div class="card-content">
         <h3>{{ dest.name }}</h3>
-        <p>{{ dest.description }}</p>
-        <strong>${{ dest.price }}</strong>
-    </li>
+        <p>{{ dest.description|truncatechars:100 }}</p>
+        <p><strong>${{ dest.price }}</strong></p>
+        <a href="{% url 'book_destination' %}?dest={{ dest.id }}" class="btn">Book Now</a>
+      </div>
+    </div>
     {% endfor %}
-</ul>
+</div>
+<div class="pagination">
+  {% if destinations.has_previous %}
+  <a href="?page={{ destinations.previous_page_number }}">Previous</a>
+  {% endif %}
+  <span>Page {{ destinations.number }} of {{ destinations.paginator.num_pages }}</span>
+  {% if destinations.has_next %}
+  <a href="?page={{ destinations.next_page_number }}">Next</a>
+  {% endif %}
+</div>
 {% endblock %}

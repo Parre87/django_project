@@ -1,11 +1,24 @@
 {% extends 'base.html' %}
+{% block title %}Dashboard - Travel Booking{% endblock %}
 {% block content %}
 <h2>Your Bookings</h2>
-<ul>
-    {% for booking in bookings %}
-    <li>{{ booking.destination.name }} - {{ booking.booking_date }} - Guests: {{ booking.number_of_guests }}</li>
-    {% empty %}
-    <li>No bookings yet.</li>
+{% if bookings %}
+<table class="bookings-table">
+  <thead>
+    <tr><th>Destination</th><th>Date</th><th>Guests</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+    {% for b in bookings %}
+    <tr>
+      <td>{{ b.destination.name }}</td>
+      <td>{{ b.booking_date }}</td>
+      <td>{{ b.number_of_guests }}</td>
+      <td>Confirmed</td>
+    </tr>
     {% endfor %}
-</ul>
+  </tbody>
+</table>
+{% else %}
+<p>You have no bookings yet. <a href="{% url 'list_destinations' %}">Browse destinations</a></p>
+{% endif %}
 {% endblock %}

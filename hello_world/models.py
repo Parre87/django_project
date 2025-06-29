@@ -18,4 +18,10 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.destination.name}"
-# Create your models here.
+
+class Testimonial(models.Model):
+    author = models.CharField(max_length=100)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.author

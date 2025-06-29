@@ -1,6 +1,30 @@
 {% extends 'base.html' %}
+{% block title %}Home - Travel Booking{% endblock %}
+{% load static %}
 {% block content %}
-<h1>Welcome to Travel Booking!</h1>
-<p>Plan your perfect trip with ease. Explore destinations and book online now!</p>
-<img src="/media/homepage.jpg" alt="Travel Image" style="max-width: 100%; height: auto;">
+<section class="hero">
+  <div class="hero-text">
+    <h2>Discover Your Next Adventure</h2>
+    <p>Plan your perfect trip with ease. Explore destinations, compare prices, and book your next adventure today!</p>
+    <a href="{% url 'list_destinations' %}" class="btn primary">Browse Destinations</a>
+  </div>
+  <div class="hero-image">
+    <img src="{% static 'images/hero_large.jpg' %}" alt="Scenic view">
+  </div>
+</section>
+
+<section class="features">
+  <div class="feature-item">
+    <h3>Easy Booking</h3>
+    <p>Book flights, hotels, and tours all in one place.</p>
+  </div>
+  <div class="feature-item">
+    <h3>Best Prices</h3>
+    <p>Compare prices from top providers to get the best deal.</p>
+  </div>
+  <div class="feature-item">
+    <h3>24/7 Support</h3>
+    <p>We're here to help, any time of the day.</p>
+  </div>
+</section>
 {% endblock %}
