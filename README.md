@@ -39,7 +39,7 @@ echo web: gunicorn app_name.wsgi > Procfile
 
 Postgres Database from Code Institute, I followed these steps:
 
-Submitted my email address to the CI PostgreSQL Database link above.
+Submitted email address to the CI PostgreSQL Database link above.
 An email was sent to me with my new Postgres Database.
 Paste URL into your env.py file and Heroku Config Vars as DATABASE_URL.
 
@@ -47,6 +47,6 @@ Install WhiteNoise package:
 pip install whitenoise
 Update the requirements.txt file with the newly installed package:
 pip freeze --local > requirements.txt
-Edit your settings.py file and add WhiteNoise to the MIDDLEWARE list, above all other middleware (apart from Django’s "SecurityMiddleware")
+Edit your settings.py file and add WhiteNoise to the MIDDLEWARE list, above all other middleware.
 
 
