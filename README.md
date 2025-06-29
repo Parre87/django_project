@@ -4,16 +4,15 @@
 Live Demo: (https://django-travel-96afa0cf92c6.herokuapp.com/)
 
 ## 🚀 Features
-🔍 Search & Filter: Search destinations by name and sort by price.
 
-🖼️ Dynamic Media: Destination images are uploaded and displayed.
+🔍 Search, Sort, and Paginate travel destinations
 
-🧾 Booking System: Authenticated users can book destinations.
+🧾 User authentication with login/logout and dashboard
 
-👤 User Dashboard: See your upcoming bookings.
+🏖️ Destination booking with custom form and date picker
 
-🌐 Authentication: Login, logout, and protected views.
+📦 Media upload for destination images
 
-🗺️ Interactive Map: Leaflet integration for map visualization.
+📈 Responsive UI with CSS styling and optional Leaflet map
 
-🎨 Responsive UI: Built with custom CSS and modern layout practices.
+🔐 Secure settings via .env for deployment
