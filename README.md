@@ -1,5 +1,6 @@
 ﻿# django_project
-# 📘 Travel booking Web Application
+# 🧳 TravelBooking - A Django Travel Reservation App
+Welcome to TravelBooking, a simple yet powerful travel destination booking platform built using Django. This app allows users to browse destinations, book trips, and manage their bookings through a user-friendly interface.
 
 Live Demo: (https://django-travel-96afa0cf92c6.herokuapp.com/)
 
